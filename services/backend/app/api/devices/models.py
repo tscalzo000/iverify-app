@@ -11,8 +11,8 @@ class Device(db.Model):
 
     deviceid = db.Column(db.BigInteger,primary_key=True,autoincrement=True)
     userid = db.Column(db.BigInteger,db.ForeignKey('tbluser.userid'))
-    name = db.Column(db.Text())
-    model = db.Column(db.Text())
+    name = db.Column(db.String(128), nullable=False)
+    model = db.Column(db.String(128), nullable=False)
 
     user = relation(User, backref=backref('tbldevice', lazy="subquery"))
 

@@ -71,8 +71,10 @@ class Login(Resource):
         response_object = {}
 
         user = get_user_by_email(email)
-        if not user or not bcrypt.check_password_hash(user.password, password):
+        if not user:
             auth_namespace.abort(404, "User does not exist")
+        if not bcrypt.check_password_hash(user.password, password):
+            auth_namespace.abort(400, "Password incorrect")
 
         access_token = user.encode_token(user.userid, "access")
         refresh_token = user.encode_token(user.userid, "refresh")

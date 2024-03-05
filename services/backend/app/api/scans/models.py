@@ -11,10 +11,10 @@ class Scan(db.Model):
 
     scanid = db.Column(db.BigInteger,primary_key=True,autoincrement=True)
     deviceid = db.Column(db.BigInteger,db.ForeignKey('tbldevice.deviceid'))
-    osversion = db.Column(db.Text())
-    appversion = db.Column(db.Text())
-    secure = db.Column(db.Boolean)
-    threats = db.Column(db.Text())
+    osversion = db.Column(db.String(128), nullable=False)
+    appversion = db.Column(db.String(128), nullable=False)
+    secure = db.Column(db.Boolean, nullable=False)
+    threats = db.Column(db.String(255), nullable=False)
 
     device = relation(Device, backref=backref('tblscan', lazy="subquery"))
 
