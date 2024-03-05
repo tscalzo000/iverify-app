@@ -19,15 +19,15 @@ A full stack application created for iVerify's Full Stack Home Test.
 3. When finished building, run `docker compose up db -d`, which will launch the database container
 4. In Docker Desktop, open the db container (usually has a name like 'iverify-app-db-1'), go to the `Exec` tab and run the commands `su - postgres`, `psql` to enter postgres psql
 5. Run the command `\c app_dev` to connect to the app_dev database
-6. Using the database creation scripts in the [DB Creation](docs/db_creation.md) to create the tables
-7. Insert your dummy data for users, devices, and scans (examples are in the [DB Seed](docs/db_seed.md) file)
+6. Using the database creation scripts in the [DB Creation](db_creation.md) to create the tables
+7. Insert your dummy data for users, devices, and scans (examples are in the [DB Seed](db_seed.md) file)
 8. Back in your terminal, run `docker compose up` which will launch the other containers
 9. Once the containers are fully loaded, navigate to http://localhost:3000/
 10. Register using whatever name and email you want
 11. Once registered, sign into the site using those credentials and you'll be able to see the users, devices, and scans
 
 ## API Documentation
-API documentation can be found in [API Docs](docs/api_docs.md)
+API documentation can be found in [API Docs](api_docs.md)
 
 ## Future Improvements
 Next steps for this project would be:
